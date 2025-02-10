@@ -15,10 +15,10 @@ RouGui是一个看片神器，视频资源来自互联网（欢迎提供更多�
 
 我们提供了开箱即用的版本，适用于以下操作系统：
 
-- [Windows](https://github.com/headlessguy123/repository-name/releases/download/v1.0/your_windows_executable.zip)
-- [macOS](https://github.com/headlessguy123/repository-name/releases/download/v1.0/your_macos_executable.zip)
+- [Windows](https://github.com/headlessguy123/RouGui/releases/download/v0.1.3/RouGui_v013_Win10_64bit.zip)
+- [macOS](https://github.com/headlessguy123/RouGui/releases/download/v0.1.3/RouGui_v013_MacOS_M.zip)
 
-请从 [Releases](https://github.com/headlessguy123/repository-name/releases) 页面下载并按照说明进行安装。
+请从 [Releases](https://github.com/headlessguy123/RouGui/releases) 页面下载并按照说明进行安装。
 
 ### 本地部署
 
