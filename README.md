@@ -27,21 +27,21 @@ RouGui是一个看片神器，视频资源来自互联网（欢迎提供更多�
 2. **克隆仓库**：
     
 ```bash
-    git clone https://github.com/headlessguy123/RouGui.git
-    cd RouGui
+git clone https://github.com/headlessguy123/RouGui.git
+cd RouGui
 ```
 
 3. **安装依赖**：
     
 ```bash
-    pip install -r requirements.txt
+pip install -r requirements.txt
 ``` 
 
 
 4. **运行程序**：
     
 ```bash
-    python Ui_box.py
+python Ui_box.py
 ```
 
 
