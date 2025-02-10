@@ -27,6 +27,8 @@ RouGui是一个看片神器，视频资源来自互联网（欢迎提供更多�
 2. **克隆仓库**：
     
 bash
+# 按Command/Ctrl + C 复制
+
     git clone https://github.com/headlessguy123/RouGui.git
     cd RouGui
     
@@ -35,6 +37,8 @@ bash
 3. **安装依赖**：
     
 bash
+# 按Command/Ctrl + C 复制
+
     pip install -r requirements.txt
     
 
@@ -42,6 +46,8 @@ bash
 4. **运行程序**：
     
 bash
+# 按Command/Ctrl + C 复制
+
     python Ui_box.py
     
 
