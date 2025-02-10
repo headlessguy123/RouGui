@@ -1,0 +1,9 @@
+beautifulsoup4==4.13.1
+cryptography==44.0.0
+PyQt5==5.15.11
+python-vlc==3.0.20123
+python-dateutil==2.9.0.post0
+requests==2.32.3
+tzlocal==5.2
+web3==7.8.0
+yt-dlp==2025.1.26
