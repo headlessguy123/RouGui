@@ -25,5 +25,4 @@ def user_config():
         'today': today,
         'free_num': 3,
     }
-    
     return user_config

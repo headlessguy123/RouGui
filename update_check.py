@@ -23,7 +23,6 @@ class UpdateChecker(QThread):
             logging.debug(f"Request exception occurred: {req_err}")
         except Exception as e:
             logging.debug(f"An unexpected error occurred: {e}")
-        
         return None
 
     def run(self):

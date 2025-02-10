@@ -130,7 +130,6 @@ class VideoDownloader(QThread):
             'format': 'best',  # 视频质量
             'outtmpl': os.path.join(outputPath, f"{self.format_title(title)}.%(ext)s"),
             'progress_hooks': [self.progress_hook],
-            # 'merge_output_format': 'mp4',
             'ffmpeg_location': ffmpeg_path,  # 指定 ffmpeg 的路径
             'logger': logger,  # 使用 logging 模块作为 yt-dlp 的日志记录器
         }

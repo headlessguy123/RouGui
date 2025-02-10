@@ -27,7 +27,7 @@ class VlcPlayerThread(QThread):
                 duration = self.player.get_length()
                 self.positionChanged.emit(media_pos, duration)
             self.stateChanged.emit()
-            self.msleep(100)  # 每隔100毫秒检查一次播放器状态
+            self.msleep(100)
 
     def stop(self):
         self.running = False
@@ -96,7 +96,7 @@ class VideoPlayer(QWidget):
 
         layout = QVBoxLayout()
         layout.setSpacing(0)
-        layout.setContentsMargins(0, 0, 0, 0)  # 移除所有边距
+        layout.setContentsMargins(0, 0, 0, 0)
         layout.addWidget(self.video_widget, stretch=1)
 
         h_layout = QHBoxLayout()

@@ -18,7 +18,6 @@ max_retries = 3
 server_version_url = 'https://drive.google.com/uc?export=download&id=1HxPyGM_j8Yg4WUai2fv3CbS7fHefg5MS'
 server_new_version_url = 'https://drive.proton.me/urls/KDSJ4QAAZC#WjaDb7YcRoOY'
 
-# 日志配置
 log_file_path = os.path.join(basePath, "logfile.log")
 log_level = "DEBUG"
 log_format = "%(asctime)s - %(levelname)s - %(message)s"

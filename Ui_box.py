@@ -5,7 +5,7 @@ import os
 import logging
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QMessageBox, QToolButton, QLabel, QGridLayout, QScrollArea, QToolBar, QDialog, QFileDialog, QLineEdit, QPushButton, QMainWindow, QSizePolicy, QStatusBar, QAction, QWidgetAction, QDesktopWidget
 from PyQt5.QtGui import QPixmap, QFont, QColor, QPainter, QFontMetrics, QCursor, QIcon
-from PyQt5.QtCore import Qt, QUrl, QTimer, pyqtSignal, QThread, pyqtSlot, QEvent
+from PyQt5.QtCore import Qt, QUrl, QTimer, pyqtSignal, QEvent
 from PyQt5.QtNetwork import QNetworkAccessManager, QNetworkRequest, QNetworkReply
 from videoplayer_vlc import VideoPlayer
 from locallock import *
