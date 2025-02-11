@@ -1,4 +1,9 @@
 __pycache__
+.DS_Store
 logfile.log
 rouspider_Ui.py
 test.json
+Ui_box_Mac.spec
+resources
+build
+dist
