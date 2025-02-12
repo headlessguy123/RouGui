@@ -201,21 +201,7 @@ class VideoWidget(QWidget):
             pixmap = pixmap.scaled(250, 200, Qt.KeepAspectRatio, Qt.SmoothTransformation)
             self.image_label.setPixmap(pixmap)
             self.retry_count = 0
-        else:
-            self.handle_error()
         self.reply.deleteLater()
-
-    def handle_error(self):
-        error_code = self.reply.error()
-        error_str = self.reply.errorString()
-        logging.debug(f"Error occurred: {error_code}, {error_str}")  # Log the error
-
-        if self.retry_count < max_retries:
-            self.retry_count += 1
-            logging.debug(f"Retrying... ({self.retry_count}/{max_retries})")
-            QTimer.singleShot(2000, lambda: self.load_image_from_url(self.reply.url().toString()))  # Retry after 2 seconds
-        else:
-            logging.debug("Maximum retry limit reached. Giving up.")
 
     def convert_seconds(self, seconds):
         if seconds and seconds >= 0:
