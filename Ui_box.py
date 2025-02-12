@@ -12,6 +12,7 @@ from locallock import *
 from config import *
 from Ui_downloader_bar_dlp import Downloader
 from update_check import UpdateChecker
+from spider import load_video
 
 class ClickableLabel(QLabel):
     clicked = pyqtSignal()
@@ -222,7 +223,7 @@ class VideoWidget(QWidget):
 
 class MainWindow(QMainWindow):
 
-    def __init__(self, videos):
+    def __init__(self):
         super().__init__()
         self.setWindowIcon(QIcon(os.path.join(basePath, 'resources/logo.webp')))
 
@@ -233,7 +234,7 @@ class MainWindow(QMainWindow):
         self.authorized = self.check_user_config()
         self.initUI()
 
-        self.all_videos = videos
+        # self.all_videos = videos
         self.rearrange_videos()
 
         self.check_update = None
@@ -305,7 +306,6 @@ class MainWindow(QMainWindow):
         self.scroll = QScrollArea()
         self.scroll.setWidgetResizable(True)
         self.scroll.setWidget(self.container)
-        self.scroll.verticalScrollBar().valueChanged.connect(self.on_scroll)
 
         self.main_layout = QVBoxLayout()
         self.main_layout.addWidget(self.scroll)
@@ -347,18 +347,15 @@ class MainWindow(QMainWindow):
 
     def rearrange_videos(self):
         self.clear_layout(self.grid_layout)
-        for index, video in enumerate(self.all_videos):
-            video_widget = VideoWidget(video)
-            video_widget.videoClicked.connect(self.play_video)
-            video_widget.videoDownload.connect(self.download_video)
-            row = index // 4
-            col = index % 4
-            self.grid_layout.addWidget(video_widget, row, col)
-
-    def on_scroll(self):
-        if self.scroll.verticalScrollBar().value() == self.scroll.verticalScrollBar().maximum() and not self.loading:
-            self.loading = True
-            self.start_thread(generator=self.thread.generator)
+        all_videos = load_video()
+        if all_videos:
+            for index, video in enumerate(all_videos):
+                video_widget = VideoWidget(video)
+                video_widget.videoClicked.connect(self.play_video)
+                video_widget.videoDownload.connect(self.download_video)
+                row = index // 4
+                col = index % 4
+                self.grid_layout.addWidget(video_widget, row, col)
 
     def create_menu_label(self, text):
         label = QLabel()
@@ -529,8 +526,6 @@ class MainWindow(QMainWindow):
 if __name__ == '__main__':
     setup_logging()
     app = QApplication(sys.argv)
-    from spider import load_video
-    videos = load_video()
-    window = MainWindow(videos=videos)
+    window = MainWindow()
     window.show()
     sys.exit(app.exec_())
